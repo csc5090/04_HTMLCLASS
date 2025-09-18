@@ -37,14 +37,28 @@
  				 - parseInt(문자열, 숫자);
  			 ==> 문자열을 정수형 숫자로 변환.
  			 ==> 진수에는 10,2,8,16을 사용 가능.
+ 			 
+ 			 console.log("'123.45' => ", parseInt("123.45"));
+ 			 console.log("123.45 => ", parseInt(123.45));
+ 			 console.log("'123a45' => ", parseInt("123a45"));
+ 			 console.log("'a12345' => ", parseInt("a12345"));
+ 			 
+ 			console.log( parseInt("100", 2)); // 4
+			console.log( parseInt("128", 8)); //10
+			console.log( parseInt("2a", 16)); // 42
+ 			 
+ 			 
+ 			 
+		   2) 사용자 정의 함수 => 개발자(사용자)가 만든 함수.
+		   
+		   - parseFloat(문자열);
+		     ==> 문자열을 실수형 숫자로 변환.
+		     
+		  console.log( parseFloat("123.45")); //123.45
+		     
  					 
  */
  
- 
- console.log("'123.45' => ", parseInt("123.45"));
- console.log("123.45 => ", parseInt(123.45));
- console.log("'123a45' => ", parseInt("123a45"));
- console.log("'a12345' => ", parseInt("a12345"));
  
 
  
