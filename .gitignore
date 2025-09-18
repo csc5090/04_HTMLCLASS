@@ -49,3 +49,5 @@
 *.dat
 /.metadata/.plugins
 /.metadata
+*.xmi
+/.metadata
