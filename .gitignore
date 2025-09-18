@@ -43,3 +43,9 @@
 .metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
 .metadata/.plugins/org.eclipse.wst.server.core/publish/publish0.dat
 .metadata/.log
+*.prefs
+/.metadata
+/.metadata
+*.dat
+/.metadata/.plugins
+/.metadata
