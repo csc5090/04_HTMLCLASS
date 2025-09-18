@@ -157,37 +157,95 @@
 		   		변수 = 함수명();
 		    4) 파라미터 변수가 있고, 반환값도 있는 함수 호출.
 		    	변수 = 함수명(값들...);
-		   
+		    
+		    function insa() {
+		   	 console.log("안녕하세요");
+		    }
+		    
+		    //insa();
+		    //insa();
+		    //insa();
+
+		    function insa2(name, age){
+		   	 console.log("나이가" + age + "세인" + name + "씨 안녕하세요~");
+		    }
+		    let irum = "홍길동";
+		    let num = 30;
+		    
+		    insa2(irum, num);
+		    
+		    insa2("일지매", 20);
+		    
+		    function insa3() {
+		   	 let str = "반갑습니다";
+		   	 return str;
+		    }
+		    
+		    function sub(a, b){
+		   	 return a - b;
+		    }
+		    
+		    let a = 100;
+		    let b = 30;
+		    
+		    let r = sub(b, a);
+		    console.log("r = " + r);
+		    
 		   
 		 
  		  
  */ 
  
- function insa() {
-	 console.log("안녕하세요");
- }
- 
- //insa();
- //insa();
- //insa();
 
- function insa2(name, age){
-	 console.log("나이가" + age + "세인" + name + "씨 안녕하세요~");
- }
- let irum = "홍길동";
- let num = 30;
+ // 문제 사용자로부터 단을 입력 받아 구구단 중 입력한 단에 해당하는 구구단을 출력하는 프로그램을 작성하기.
+ // (단, 해당 단을 출력하는 부분은 함수로 작성)
+
+ 	let gugunum = prompt("몇 단?");
+ 	let gugunum2 = Number(gugunum);
+ 	
+ 	function gugudan(gugunum2){
+ 		for(let aa = 1; aa<=9; aa++) { 
+		     console.log(gugunum2+" * "+aa+" = "+(gugunum2 * aa));
+ 		}
+ 	}
+ 	
+ 	gugudan(gugunum2);
+
+ 	
  
- insa2(irum, num);
  
- insa2("일지매", 20);
+ //문제2   두 수를 파라미터로 받아서 작은 수부터 큰 수까지의 합계를 반환하는 함수 작성하기.
  
- function insa3() {
-	 let str = "반갑습니다";
-	 return str;
- }
+ 	let a1 = prompt("첫 수 입력");
+ 	let b1 = prompt("두번째 수 입력");
+ 	
+ 	a1 = Number(a1);
+ 	b1 = Number(b1);
+ 	let result1 = 0;
+ 	
+ 	function plus(a1, b1){
+ 		if ( a1 > b1 ) {
+ 			for (let i = b1; i<=a1; i++ ){
+ 				b1 += b1+1;
+ 			} 
+ 			result1 = b1;
+ 		} else {
+ 			for (let i = a1; i <= b1; i++){
+ 				a1 += a1+1;
+ 			}
+ 			result1 = a1;
+ 		}
+ 	 	console.log("순차합 : "+result1);
+ 	}
+ 	
+ 	plus(a1, b1);
+ 	
+ 	
  
  
- 
+ //문제3  년도를 매개변수로 받아서 해당 년도가 '윤년'인지, '평년'인지를 판정하는 함수 작성하기.
+ 		 // 조건) 윤년은 4년에 한 번. 100년에 한 번은 다시 평년이 됨.
+ 		 //      또한 다시 400년에 한번씩 윤년이 됨.
  
  
 </script>
