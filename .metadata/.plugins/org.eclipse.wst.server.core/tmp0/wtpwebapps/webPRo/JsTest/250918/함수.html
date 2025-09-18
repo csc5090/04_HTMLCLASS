@@ -83,18 +83,111 @@
 	 		  console.log( isNaN("123.45") ); //false
 	 		  console.log( isNaN("12a345") ); // true
 	 		  
+	 		  console.log( Number(null) ); //0
+	 		  console.log( Number("") ); //0
+	 		  console.log( isFinite(null) ); //true
+	 		  console.log( isFinite("") );  //true
+	 		  
+	 		  //숫자 2개를 차례로 입력받아 덧셈 결과 출력.
+	 		  
+	 		  let num1 = prompt("첫 번째 숫자 입력");
+	 		  
+	 		  let num2 = prompt("두 번째 숫자 입력");
+	 		  
+	 		  let sum = Number(num1) + Number(num2);
+	 		  
+	 		  console.log(`${num1} + ${num2} = ${sum}`);
+	 		  
+	 		  --> 리팩토링
+	 		  
+	 		  let num1;
+	 		  
+	 		  do{
+	 			  num1 = prompt("첫번째 숫자를 입력");
+	 		  } while (!isFinite(num1));
+	 		  
+	 		  let num2;
+	 		  do{
+	 			  num2 = prompt("두번재 숫자를 입력");
+	 		  } while(isNaN(num2));
+	 		  
+	 		  let sum = Number(num1) + Number(num2);
+	 		  console.log(`${num1} + ${num2} = ${sum}`);
+	 		  
 	 		  
 	 		  
 		   2) 사용자 정의 함수 => 개발자(사용자)가 만든 함수.
 		   
 		   
+		   - 함수 정의 ==> 함수를 작성하는 것.
+		   
+		   형식1) 함수 선언문
+		   function 함수명(파라미터 변수들...){
+			   처리할 내용들;
+			   ...
+			   return 반환값;
+		   }
+		   
+		   형식2) 함수 표현식
+		   
+		   const 함수명 = function(파라미터변수들...){
+			   처리할 내용들;
+			   ...
+			   return 반환값;
+		   }
+		   
+		   
+		   형식3) Function 생성자 함수 이용.==>거의 사용 안함.
+		   
+		   형식4) 화살표 함수
+		   const 함수명 = (파라미터변수들...)=>{
+			   처리할 내용들;
+			   ...
+			   return 반환값;
+		   }
+		   
+		   - 함수 호출
+		   	==> 함수 영역으로 제어가 이동되어 함수의 처리 내용들이 실행되도록 하는 것.
+		   	
+		   	1) 파라미터 변수가 없고, 반환값도 없는 함수 호출
+		   		함수명();
+		   	2) 파라미터 변수가 있고, 반환값이 없는 함수 호출
+		   		함수명(값들...);
+		   	3) 파라미터 변수가 없고, 반환값이 있는 함수 호출.
+		   		변수 = 함수명();
+		    4) 파라미터 변수가 있고, 반환값도 있는 함수 호출.
+		    	변수 = 함수명(값들...);
+		   
+		   
 		 
  		  
- 		  
- */d
+ */ 
  
+ function insa() {
+	 console.log("안녕하세요");
+ }
  
+ //insa();
+ //insa();
+ //insa();
 
+ function insa2(name, age){
+	 console.log("나이가" + age + "세인" + name + "씨 안녕하세요~");
+ }
+ let irum = "홍길동";
+ let num = 30;
+ 
+ insa2(irum, num);
+ 
+ insa2("일지매", 20);
+ 
+ function insa3() {
+	 let str = "반갑습니다";
+	 return str;
+ }
+ 
+ 
+ 
  
  
 </script>
