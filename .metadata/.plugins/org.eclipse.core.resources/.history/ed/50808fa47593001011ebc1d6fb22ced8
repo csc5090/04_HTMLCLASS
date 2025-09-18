@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>제어문</title>
+
+
+<script>
+
+// 1부터 100까지 합계 10의 배수 출력
+
+let baesu = prompt("숫자 입력");
+let result;
+
+
+for(let i = 0; i<=100; i++) {
+	i=+1;
+	if(i % 10 == 0){
+		result = i;
+		console.log(baesu+"의 순차합 중 10의 배수 : "+result);
+	}
+}
+
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수(function)</title>
+
+<script>
+/*
+ *  함수 ==> 자바의 메소드. 특정 기능을 가진 단위 프로그램(한가지 목적을 달성하기 위해 작성된 코드의 집합.)
+ 
+ 	
+ 
+ 		- 함수의 종류
+ 		1) 내장함수 ==> 프로그래밍 언어에서 미리 만들어 제공하는 함수
+ 		
+ 		(1) eval(수식문자열);
+ 			==> 주어진 '수식 문자열'을 계산 가능한 식으로 변환 후 처리함.
+ 			
+ 			
+ 			 let str = "(100/4+5)/5";
+ 			 let ex = (100/4+5)/5;
+ 			 let ev = eval(str); // str의 따옴표를 제거 후 계산.
+ 			 
+ 			 console.log("str = "+str);
+ 			 console.log("ex = "+ex);
+ 			 console.log("ev = "+ ev);
+ 			 
+ 			 let ev2 = eval("ev + 20"); //ev + 20
+ 			 
+ 			 console.log("ev2 = "+ev2);
+ 			 
+ 			 let con = eval("console");
+ 			 con.log("ㅎㅇ");
+ 			 =================
+ 			 
+ 				(2) 문자열을 숫자로 변환하는 함수.
+ 				 - parseInt(문자열, 숫자);
+ 			 ==> 문자열을 정수형 숫자로 변환.
+ 			 ==> 진수에는 10,2,8,16을 사용 가능.
+ 					 
+ */
+ 
+ 
+ console.log("'123.45' => ", parseInt("123.45"));
+ console.log("123.45 => ", parseInt(123.45));
+ console.log("'123a45' => ", parseInt("123a45"));
+ console.log("'a12345' => ", parseInt("a12345"));
+ 
+
+ 
+ 
+</script>
+
+
+</head>
+<body>
+
+</body>
+</html>

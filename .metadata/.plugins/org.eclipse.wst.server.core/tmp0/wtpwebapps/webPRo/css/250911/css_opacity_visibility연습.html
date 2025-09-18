@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Opacity, Visibility</title>
+
+<style>
+img {
+	width: 150px;
+	height: 120px;
+}
+
+img.one {
+	opacity: 0.5;
+}
+
+/*
+	opacity : 불투명도를 설정한다. (0~1 사이의 값으로 설정한다.)
+
+*/
+img.two {
+	visibility: hidden;
+}
+
+/*
+	visibility : 화면에 보이게 하거나 보이지 않게 설정.
+				(hidden, visible->기본값)
+				
+	display속성을 none으로 설정하면 해당 객체가 출력도 되지 않는다.
+*/
+img.three {
+	display: none;
+}
+</style>
+
+</head>
+<body>
+
+	<img src="../../images/burger.jpg" class="one">
+	<img src="../../images/pizza.jpg">
+	<br>
+	<hr color="red">
+	<br>
+
+	<img src="../../images/burger.jpg" class="two">
+	<img src="../../images/pizza.jpg">
+	<br>
+	<hr color="red">
+	<br>
+
+	<img src="../../images/burger.jpg" class="three">
+	<img src="../../images/pizza.jpg">
+	<br>
+	<hr color="red">
+	<br>
+
+
+</body>
+</html>
