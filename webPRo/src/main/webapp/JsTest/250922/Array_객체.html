@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Array 객체</title>
+
+<script>
+	/*
+	 *  Array객체 ==> 배열을 객체화 한 것 
+	
+	 - 배열 생성(Array객체 생성)
+	 const 배열명 = new Array(개수);     개수만큼 크기 배열 생성
+	 const 배열명 = new Array();    0개짜리 배열 생성
+	 const 배열명 = new Array(값1, 값2,..., 값n);
+	 const 배열명 = [값1, 값2, ..., 값n];   배열 생성 및 초기화까지.
+	
+	 - 속성 
+	 length ==> 배열 개수를 나타냄.
+	
+	 */
+
+	//const a = new Array();
+	const a = new Array(5);
+	console.log("배열이 생성된 직후의 배열 개수 : " + a.length);
+
+	a[0] = 100;
+	a[1] = 200;
+	a[2] = 300;
+	a[3] = 400;
+	a[4] = 500;
+
+	for (let i = 0; i < a.length; i++) {
+		console.log("a[" + i + "] = " + a[i]);
+	}
+
+	// 자바스크립트의 배열은 개수에서 사용되는 첨자(index)보다 큰 첨자(index)를
+	// 사용하면 자동으로 그 첨자에 맞는 갯수로 확장된다.
+
+	a[5] = 600;
+	a[6] = 700;
+	a[7] = 3.14;
+	a[8] = "가나다";
+	a[9] = false;
+
+	a[15] = '안녕하세요';
+
+	console.log("확장 후 배열의 개수 : " + a.length);
+
+	for (let i = 0; i < a.length; i++) {
+		console.log("a[" + i + "] = " + a[i]);
+	}
+	console.log("----------------------");
+
+	const b = new Array("홍길동", "이몽룡", "변학도", "이순신", "강감찬");
+
+	for (let i = 0; i < b.length; i++) {
+		console.log("b[" + i + "] = " + b[i]);
+	}
+	console.log("-----------------------");
+
+	const c = [ "서울", "대전", "대구", "부산" ];
+
+	for (let i = 0; i < c.length; i++) {
+		console.log("c[" + i + "] = " + c[i]);
+	}
+
+	console.log("------------------------");
+
+	/* 사람 이름을 계속 입력받아 배열에 저장하고, 사용자가 공백을 입력하거나 취소를 누르면
+		그때까지 입력한 이름들을 출력하시오.
+	 */
+
+	const nameArr = []; // 0개짜리 배열 생성
+
+	let i = 0; //배열의 첨자 역할을 할 변수 선언 및 초기화
+
+	//문자열.trim() ==> 문자열의 앞 뒤 공백을 없애준다.
+
+	/* while(true) {
+	 let name = prompt("이름 입력");
+	 
+	 if(name.trim()=="" || name=null){
+		 break;
+	 }
+	 
+	 nameArr[i] = name;
+	 i++;
+	}
+	
+	for(let i=0; i<nameArr.length; i++) {
+	 console.log("nameArr[" + i + "] = " + nameArr[i]);
+	} */
+
+	/*
+		문제) 서로 중복되지 않은 정수 5개 입력 받아 출력하기
+			  (정수는 차례로 한 번에 하나씩 입력받고 만약 입력한 값이 기존의 데이터와 중복되면 추가하지 않는다.)
+	 */
+
+	const numArr = new Array(5);
+
+	for (let i = 0; i < numArr.length; i++) {
+		let flag; //데이터가 중복되면 true가 됨.
+		let num;
+
+		do {
+			num = prompt((i + 1) + "번째 정수 입력");
+			flag = false;
+
+			for (let j = 0; j < i; j++) {
+				if (num == numArr[j]) {//중복이라면
+					flag = true;
+					break;
+				}
+			}
+		} while (falg == true); //중복 확인 시 다시 시작.
+
+		numArr[i] = num;
+	}
+	
+	
+	for (let num of numArr){
+		console.log(num);
+	}
+	
+	/*
+		- Array객체의 메서드들...
+		
+		- indexOf(값, 시작위치);
+		- lastIndexOf(값, 시작위치);
+			==> 배열에서 '값'의 위치(index값)를 반환한다.
+			==> 배열에서 '값'이 없으면 -1을 반환.
+			==> indexOf()는 앞에서 뒤쪽 방향으로 검색을 진행.
+				lastIndexOf()는 뒤에서 앞쪽 방향으로 검색을 진행.
+			==> '시작위치'는 검색을 시작할 위치 값으로 생략하면 indexOf()는 처음부터 
+				lastIndexOf()는 마지막 위치부터 검색을 시작한다.
+	*/
+	
+const a = new Array(60, 100, 70, 90, 80, 85, 70, 95, 65);
+let b1 = a.indexOf(70);   //2
+console.log("b = " + b);
+console.log( a.lastIndexOf(70) );  //6
+console.log( a.indexOf(70, 4) );  //6
+console.log( a.lastIndexOf(70, 4) ); //2
+console.log( a.indexOf(50) ); // -1
+
+
+/* - join(연결문자)
+  	==> 배열의 각 요소값들을 '연결문자'로 연결하여 하나의 문자열로 반환한다.
+ 	==> '연결문자'를 생략하면 기본값은 '쉼표'가 된다.
+ 	
+ 	push(데이터들...)
+ 	==> 배열의 끝에 '데이터들...'을 추가한다.
+ 	
+ 	- pop()
+ 		==> 배열의 마지막 위치의 요소값을 꺼내와 반환하고, 배열에서 마지막 위치의 요소값을 삭제함.
+ 		
+ 	
+ */
+
+const a2 = ["홍길동", "일지매", "이몽룡"];
+console.log("변경 전 : " + a2.join("$$"));
+
+a2.push("성춘향", "이순신");
+
+console.log("push 작업 후 : "+a2.join("$$"));
+
+let b2 = a2.pop();
+console.log("pop 후 : " + a2.join());
+console.log("pop 후 가져온 데이터 b = " + b2);
+
+
+/* - unshift(데이터들...)
+  	==> 배열의 처음 위치에 '데이터들...'을 추가한다.
+   
+   - shift()
+   	==> 배열의 첫번재 위치의 요소값을 반환하고, 배열에서 첫번재 위치의 요소값을 삭제한다.
+    
+ */
+
+const a3 = ["홍길동", "일지매", "이몽룡"];
+console.log("변경 전 : " + a3.join("$$"));
+
+a3.unshift("성춘향", "이순신");
+console.log("unshift 작업 후 : " + a3.join());
+
+let c1 = a3.shift;
+console.log("shift 후 : " + a3.join());
+console.log(":shift 후 가져온 데이터 c1 = " + c1);
+
+
+
+
+/* - reverse()
+ * 		==> 배열의 요소값들을 현재 순서의 역순으로 재배열.
+ 
+ */
+  
+ const a4 = ["홍길동", "일지매", "이몽룡"];
+ console.log("변경전 : " + a4.join());
+ 
+ a4.reverse();
+ 
+ console.log("reverse 된 이후 : " + a4.join() );
+
+
+ const aa = ["대전", "대구", "목포", "인천"];
+ const bb = [10, 20, 30, 40, 50];
+ const cc = aa.concat(bb);
+ 
+ console.log("배열 aa => " + aa.join() );
+ console.log("배열 bb => " + bb.join() );
+ console.log("배열 cc => " + cc.join() );
+ 
+ 
+ 
+ /* - splice(시작위치, 종료위치)
+ 	==> 배열의 '시작위치'부터 '종료위치'이전까지의 요소값들을 추출하여 배열로 반환한다.
+ 	==> '종료위치'를 생략하면, '시작위치'부터 배열의 끝까지 요소값들을 추출한다.
+ 	==> '종료위치'가 음수이면, '시작위치'부터 끝까지의 데이터 중에서 뒤에서부터 생략할 개수로 활용함.
+ 	
+ */
+ 
+ const aa1 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+ const bb1 = aa1.slice(4, 9);
+ console.log("a => " + aa1.join());
+ console.log("b => " + bb1.join());
+ 
+ const cc1 = aa1.slice(4);
+ console.log("c => " + cc1.joun() );
+
+ const dd1 = aa1.slice(4, -5);
+ console.log("d = > " + dd1.join());
+ 
+ /*
+   - splice(시작위치, 삭제할개수, 추가할데이터들...)
+   	==> 배열의 '시작위치'부터 '삭제할 개수'만큼의 데이터를 삭제하고, 삭제한 자리에 '추가할 데이터들'을 추가한다.(배열 자체 변경)
+ */
+ 
+ //배열을 출력할 때 '배열변수명'만 기술하면 '배열변수명.join()''
+ const aa4 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+   	console.log("a => " + a);
+   	
+ aa4.splice(5,3,"가","나");
+ 
+ console.log("slice() 작업 후 a => " + aa4);
+ 
+ aa4.splice(8,0,"A","B","C");
+ console.log("slice() 작업 후 a =>" + aa4);
+ 
+ 
+ /*
+ 	- sort()
+ 		==> 배열의 요소값들을 '오름차순'으로 정렬하여 재배치한다.
+ 		==> 배열의 요소값들을 '문자열'로 변환하여 정렬한다.
+ 		
+ 	- sort(정렬함수)
+ 		==> 정렬함수를 이용하여 정렬 방식을 결정한다.
+ 		==> 정렬함수는 파라미터 변수가 2개로 구성되어 있고, 배열의 인접해 있는 데이터 2개를 가져와 비교하는 역할.
+ 		==> 주어진 '정렬함수'의 반환값이 양수이면, 인접한 2개의 데이터의 순서가 바뀌고 음수나 0을 반환하면 순서가 변하지 않음.
+ 		(0은 두 값이 같을 대 반환.)
+ 		
+ 	
+ 		
+ 	정렬함수 형식 )
+ 		function 정렬함수명(변수1, 변수2) {
+ 			//오름차순 예
+ 			if ( 변수1 > 변수2 ) {
+ 				return 1;
+ 			} else {
+ 				return -1;
+ 			}
+ 		}
+ */
+ 
+ 
+ const aa6 = [90, 70, 95, 100, 75, 80];
+ console.log("정렬 전 => " + aa6);
+ 
+ aa6.sort();
+ 
+ console.log("정렬 후 => " + aa6);
+ 
+ function comp(x, y){
+	 if(x>y){
+		 return 1;
+	 } else {
+		 return -1;
+	 }
+ }
+ 
+ aa6.sort(comp);
+ 
+ console.log("정렬 후(오름차순) => " + aa6);
+ 
+ //-------------------------------
+ 
+ /*
+ 	-for each( callback )
+ 		==> 배열 요소 개수만큼 차례로 callback 함수를 호출하여 처리함.
+ 		형식) forEach( function(요소값, index, this값) { 처리할 내용들; })
+
+ 
+ */
+ 
+ 
+ //콜백함수를 익명함수로 구현
+ const arr1 = ['a', 'b', 'c'];
+ arr1.forEach( function(value, index, myArr) {
+	 console.log(`value : ${value}, index : ${index}, ${myArr[i]}` );
+ });
+ 
+ //콜백함수를 화살표 함수로 구현
+ arr1.forEach((value, index) => {
+	 console.log(`value : ${v}, index:${i}`);
+ }); 
+ 
+ 
+ 
+</script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>
