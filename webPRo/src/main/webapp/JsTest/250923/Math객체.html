@@ -54,37 +54,69 @@
     	 
     	 //23 ~ 32 사이의 난수 만들기
     	 // let rnd = Math.floor(Math.random() * (32-23+1) + 23);
+    	 
+    	 
+    	 
+    	 //1~10사이의 난수를 발생시킨 후 사용자가 값을 맞추는 프로그램  작성
+    	 
+    	 let rnd = Math.floor(Math.random() * 10 + 1);
+    	 
+    	 let input = prompt("숫자 입력");
+    	 let inputnum = Number(input)
+    	 console.log(rnd);
+    	 
+    	 if(inputnum == rnd) {
+    		 console.log("정답");
+    	 } else {
+    		 console.log("ㄲㅂ");
+    	 }
     	
  */
 
  
- //1~10사이의 난수를 발생시킨 후 사용자가 값을 맞추는 프로그램  작성
+
  
- let rnd = Math.floor(Math.random() * (10-1+1) + 1);
  
- let input = prompt("숫자 입력");
- let inputnum = Number(input)
- console.log(rnd);
+ //가위바위보 게임 프로그램을 작성하기.
+   //컴터는 난수로, 사용자는 입력받아서.
+   //출력예시 : 컴퓨터 : 바위,   사용자 : 가위 , 당신이 졌습니다,비겼습니다,이겼습니다.
+  
+ let input = prompt("가위 : 1, 바위 : 2, 보 : 3");
+ let player = Number(input);
+ let com = Math.floor(Math.random() * 3) + 1;
  
- if(inputnum == rnd) {
-	 console.log("정답");
+ if (com === 1 ) {
+	    com = '가위';
+	} else if (com === 2) {
+	    com = '바위';
+	} else if (com === 3) {
+	    com = '보';
+	}
+
+if (player === 1) {
+	    player = '가위';
+	} else if (player === 2) {
+	    player = '바위';
+	} else if (player === 3) {
+	    player = '보';
+	}
+
+
+ 
+ if( player === com ) {
+	 console.log("컴퓨터 : " + com + ", 당신 : " + player + " 결과 : 당신이 비겼습니다.");
+ } else if ( (player === '가위' && com === '보') ||
+		     (player === '바위' && com === '가위')||
+		     (player === '보' && com === '바위') ) {
+	 console.log("컴퓨터 : " + com + ", 당신 : " + player + " 결과 : 당신이 이겼습니다.");
  } else {
-	 console.log("ㄲㅂ");
+	 console.log("컴퓨터 : " + com + ", 당신 : " + player + " 결과 : 당신이 졌습니다.");
  }
  
+
  
- const MIN_NUMBER = 1;
- const MAX_NUMBER = 10;
- const SECRET_NUMBER = Math.floor(Math.random() * (MAX_NUMBER - MIN_NUMBER + 1)) + MIN_NUMBER;
-
- let userGuess = prompt("숫자를 입력하세요.");
- let userGuessNumber = Number(userGuess);
-
- if (userGuessNumber === SECRET_NUMBER) {
-   console.log("정답입니다!");
- } else {
-   console.log("아쉽네요. 정답은 " + SECRET_NUMBER + "였습니다.");
- }
+ 	
+ 
  
  
 
