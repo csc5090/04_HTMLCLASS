@@ -147,16 +147,25 @@
  
  
  // 로또 번호 만들기. ( 1 ~ 45 사이의 중복되지 않는 난수 6개 만들기)
+ function generateLottoNumbers(){
+	 
+ const lottoNumbers = [];
  
+ while(lottoNumbers.length < 6){
+ const num = Math.floor(Math.random() * 45) + 1;
  
- const lottonum = Math.floor(Math.random() * (45 - 1) + 1 );
+ if (!lottoNumbers.includes(num)) {
+     lottoNumbers.push(num);
+
+     lottoNumbers.sort((a, b) => a - b);
+     
+     return lottoNumbers;
+ 	    }
+     }
+ }
  
-  
- 
- 
- 
- 
- 
+ const lotto = generateLottoNumbers();
+ console.log("생성된 로또 번호:", lotto);
 
 </script>
 
