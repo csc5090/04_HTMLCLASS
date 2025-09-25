@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM 요소 찾기</title>
+
+<style>
+div { 
+	border: 1px solid red;
+}
+</style>
+
+<script>
+
+function test() {
+	const myDiv = document.getElementById("testId");
+	
+	//alert(myDiv.innerHTML);
+	//alert(myDiv.textContent);
+	
+	//myDiv.innerHTML = "<h3>반갑습니다.</h3>";
+	//myDiv.textContent = "<h3>반갑습니다.</h3>"
+	
+	//myDiv.insertAdjacentHTML("beforebegin", "<h3>ㅎㅇ여.beforebegin</h3>");
+	//myDiv.insertAdjacentHTML("afterbegin", "<h3>ㅎㅇ여.afterbegin</h3>");
+	//myDiv.insertAdjacentHTML("beforeend", "<h3>ㅎㅇ여.beforeend</h3>");
+	//myDiv.insertAdjacentHTML("afterend", "<h3>ㅎㅇ여.afterden</h3>");
+	
+	//찾은 엘리먼트에 style을 자바스크립트로 설정하는 방법
+	//형식) E.style.스타일속성명 = "스타일속성값";
+	
+
+	myDiv.style.color = "red";
+	myDiv.style.backgroundColor = "yellow";
+	myDiv.style.fontSize = "30pt";
+	
+	
+}
+
+
+
+</script>
+
+
+</head>
+<body>
+
+<h2>DOM 요소 찾기 연습</h2>
+
+<form>
+	<input type="button" value="연습" onclick="test()">
+</form>
+<br><hr color="blue"><br>
+
+<div id="testId">여러분 <span> ㅎㅇ요</span> ㅎㅇㅎㅇ</div>
+
+
+</body>
+</html>
