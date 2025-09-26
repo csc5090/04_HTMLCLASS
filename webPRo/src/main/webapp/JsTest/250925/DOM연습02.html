@@ -39,9 +39,80 @@ function view() {
 }
 
 function add(){
-	// '<span>부산</span>' 을 생성해서 <div> 태그 안에 추가하기.
+	// '<span>부산</span>' 을 생성해서 <div> 태그 안에 추가하기.	
+	
+	//span생성
+	const spanTag = doucument.createElement("span");
+	
+	//부산이라는 문자열을 갖는 textNode 생성
+	const txt = document.createTextNode("부산");
+	
+	//span태그의 마지막 자식 노드 자리에 textNode를 추가하기 ==> <span>부산</span>
+	spanTag.appendChild(txt);
+	
+	//기존에 존재하는 span태그 중에서 index가 1인 엘리먼트 구하기
+	const currSpan = document.getElementsByTagName("span")[1];
+	
+	//<div>엘리먼트 구하기
+	const divTag = document.getElementsByTagName("div")[0];
+	
+	//두번째 span태그 앞에 새로 만든 태그 추가하기
+	//divTag.insertBefore(spanTag, currSpan);
+	//마지막 위치에 새로 만든 태그 추가하기
+	//divTag.appendChild(spanTag);
+	
+	//두번째 span태그를 새로 만든 태그로 변경하기
+	//divTag.replaceChild(spanTag, currSpan);
+	
+	//<div>태그의 내용을 모두 지우고 새로 만든 태그만 추가하기
+	//divTag.innerHTML = "<span>인천</span>";
+	//divTag.innerHTML += "<span>인천</span>";
+	//divTag.innerHTML += "<span>인천</span>" + divTag.innerHTML; 
+	
+	
+	//두번째 span 태그 삭제하기
+	//divTag.removeChild(currSpan);
+	
+	//삭제하려는 엘리먼트를 기준으로 처리하기
+	//currSpan.parentNode.removeChild(currSpan);
+	
+	//자신 삭제하기
+	//currSpan.remove();
+	
+	
+	
+	/*
+		새로운 속성 추가하기.
+		currSpan.setAttribute("class", "redColor");
+		
+		속성값 읽어오기
+		첫번째(index가 0) <input>태그의 value 속성값 읽기
+		const inputTag = document.getElementsByTagName("input")[0];
+		const val = inputTag.getAttribute("value");
+		console.log("value = " + val);
+		
+		속성값 변경하기
+		첫번째(index가 0) <input>태그의 value 속성값을 완료로 변경하기
+		inputTag.setAttribute("value", 완료);
+		
+		속성 삭제하기
+		document.getElementsByTagName("hr")[0].removeAttribute("color");
+		
+		
+		//이벤트를 처리하는 이벤트핸들러에서 this는 이벤트가 발생한 객체를 의미함.
+		function test(el){
+			console.log("this", el);
+		}
+	
+		
+		
+	
+	*/
+	
 	
 }
+
+
 
 
 </script>
@@ -50,6 +121,8 @@ function add(){
 
 <form>
 	<input type="button" value="확인" onclick="view()">
+	<input type="button" value="추가" onclick="add()">
+	<input type="button" value="this확인" onclick="test(this)">
 	
 </form>
 <br><hr color="red"><br>

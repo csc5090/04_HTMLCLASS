@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+
+function calc(){
+	
+	const trList = document.getElementsByTagName("tr");
+	
+	for(let i=i; i<trList.length; i++){
+		const tdList = trList[i].getElementsByTagName("td");
+		
+		
+	let sum = 0;	
+	for(let j=2; j<=4; j++){
+		sum += Number(tdList[j].textContent);
+	}	
+	tdList[tdList.length-1].innerHTML = sum;
+	}
+	
+}
+
+
+
+
+
+
+function calc() {
+	const rows = document.querySelectorAll('table tr');
+	
+	for (let i = 1; i < rows.length; i++) {
+		
+		const currentRow = rows[i];
+		const cells = currentRow.querySelectorAll('th');
+		
+		const kor = parseInt(cells[2].textContent);
+		const eng = parseInt(cells[3].textContent);
+		const math = parseInt(cells[4].textContent);
+		
+		const total = kor + eng + math;
+		
+		cells[5].textContent = total;
+	}
+
+}
+
+</script>
+
+
+</head>
+<body>
+<table border="1">
+<tr>
+	<th>번호</th>
+	<th>이름</th>
+	<th>국어</th>
+	<th>영어</th>
+	<th>수학</th>
+	<th>총점</th>	
+</tr>
+
+<tr>
+	<th>1</th>
+	<th>홍길동</th>
+	<th>100</th>
+	<th>95</th>
+	<th>90</th>
+	<th>&nbsp;</th>	
+</tr>
+
+<tr>
+	<th>2</th>
+	<th>홍길서</th>
+	<th>80</th>
+	<th>75</th>
+	<th>85</th>
+	<th>&nbsp;</th>	
+</tr>
+
+<tr>
+	<th>3</th>
+	<th>홍길남</th>
+	<th>70</th>
+	<th>75</th>
+	<th>70</th>
+	<th>&nbsp;</th>	
+</tr>
+
+
+<tr>
+	<th>4</th>
+	<th>홍길북</th>
+	<th>60</th>
+	<th>95</th>
+	<th>90</th>
+	<th>&nbsp;</th>	
+</tr>
+</table>
+
+
+<br><hr color="red"><br>
+<input type="button" value="총점 계산하기" onclick="calc()">
+
+
+
+
+
+</body>
+</html>
