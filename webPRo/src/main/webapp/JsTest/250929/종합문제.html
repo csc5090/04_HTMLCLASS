@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+/* 출력 예시 1) ==> 
+  취미를 1개 이상 선택했을 때.
+	홍길동씨는 남자(여자)이고, 취미는 여행, 바둑, 테니스 이군요!
+	
+   출력 예시 2) ==>
+   취미를 하나도 선택하지 않았을 때.
+   홍길동씨는 남자(여자)이고, 취미는 없으시군요!
+	
+ */
+
+ window.onload = function() {
+     const viewBtn = document.getElementById('viewBtn');
+     const form = document.exForm;
+ 
+     viewBtn.addEventListener('click', () => {
+    	 const name = form.irum.value;
+    	 
+    	 
+    	 const genderRadios = form.querySelectorAll('input[name="gender"]');
+         let gender = '';
+         genderRadios.forEach(radio => {
+             if (radio.checked) {
+                 gender = radio.value;
+             }
+         });	
+         
+         const hobbies = [];
+         const hobbyCheckboxes = form.querySelectorAll('input[name="hobby"]:checked');
+         
+         hobbyCheckboxes.forEach(checkbox => {
+             hobbies.push(checkbox.value);
+         });
+         
+         let message = `${name}씨는 ${gender}이고, `;
+         if (hobbies.length > 0) {
+             message += `취미는 ${hobbies.join(', ')}이군요!`;
+         } else {
+             message += `취미가 없으시군요!`;
+         }
+
+         alert(message);
+     });
+    	 
+     }
+
+  
+ 
+</script>
+
+
+
+</head>
+<body>
+
+	<form name="exForm">
+		이 름 : <input type="text" name="irum"><br><br>
+		성 별 : <input type="radio" name="gender" value="남자" checked> 남
+			   <input type="radio" name="gender" value="여자"> 여
+			   <br><br>		   
+		취 미 : <input type="checkbox" name="hobby" value="여행"> 여행
+			   <input type="checkbox" name="hobby" value="독서"> 독서 
+			   <input type="checkbox" name="hobby" value="영화감상"> 영화감상
+			   <input type="checkbox" name="hobby" value="바둑"> 바둑
+			   <input type="checkbox" name="hobby" value="장기"> 장기
+			   <input type="checkbox" name="hobby" value="배드민턴"> 배드민턴
+			   <input type="checkbox" name="hobby" value="테니스"> 테니스
+			   <br><br>
+			   
+		<input type="button" value="결과 출력" id="viewBtn"><br><br>
+
+
+
+	</form>
+
+
+</body>
+</html>
