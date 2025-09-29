@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>text류객체02</title>
+<style>
+body {
+	font-family: sans-serif;
+}
+
+form {
+	max-width: 400px;
+	margin: 50px auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+}
+
+input[type="text"] {
+	width: 100%;
+	padding: 8px;
+	margin-bottom: 10px;
+	box-sizing: border-box;
+}
+
+input[type="button"] {
+	width: 100%;
+	padding: 10px;
+	background-color: #007BFF;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+input[type="button"]:hover {
+	background-color: #0056b3;
+}
+</style>
+<script>
+   
+    window.onload = function() {
+        const calcBtn = document.getElementById('calcBtn');
+        const form = document.exForm;
+
+        
+        calcBtn.addEventListener('click', () => {
+            const num1 = parseInt(form.num1.value);
+            const num2 = parseInt(form.num2.value);
+            const operator = form.op.value;
+            let result;
+
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("숫자를 입력해주세요.");
+                form.result.value = "에러";
+                return;
+            }
+            if (operator === "") {
+                 alert("연산자를 입력해주세요.");
+                 form.result.value = "에러";
+                 return;
+            }
+
+            
+            const operations = {
+                '+': (a, b) => a + b,
+                '-': (a, b) => a - b,
+                '*': (a, b) => a * b,
+                '/': (a, b) => {
+                    if (b === 0) {
+                        alert("0으로 나눌 수 없습니다.");
+                        return "에러";
+                    }
+                    return a / b;
+                },
+                '%': (a, b) => a % b
+            };
+
+           
+            if (operations[operator]) {
+                result = operations[operator](num1, num2);
+            } else {
+                alert("유효하지 않은 연산. (+, -, *, /, %) 중 하나를 입력.");
+                form.result.value = "";
+                return;
+            }
+            
+            
+            form.result.value = result;
+        });
+    };
+</script>
+</head>
+<body>
+	<form name="exForm">
+		<label>첫번째 값 : <input type="text" name="num1"></label><br>
+		<label>두번째 값 : <input type="text" name="num2"></label><br>
+		<label>연산자 : <input type="text" name="op" maxlength="1"></label><br>
+		<input type="button" value="결 과 출 력" id="calcBtn"><br> <label>결
+			과 : <input type="text" name="result" readonly>
+		</label>
+	</form>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+
+/*
+ 	문제) 단을 입력한 후 '출력' 버튼을 누르면 입력한 단에 해당하는 구구단을 아래의 textarea영역에 출력하기.
+ 	*/
+ 
+ 
+ 	
+ 	 window.onload = function() {
+        
+        const form = document.textForm;
+        const printBtn = form.querySelector('#printBtn'); 
+        const display = form.querySelector('[name="display"]'); 
+
+       
+        printBtn.addEventListener('click', () => {
+            const dan = parseInt(form.dan.value);
+
+          
+            if (isNaN(dan)) {
+                alert("숫자를 입력해주세요.");
+                display.value = "";
+                return;
+            }
+
+            
+            let resultString = "";
+            for (let i = 1; i <= 9; i++) {
+                resultString += `${dan} x ${i} = ${dan * i}\n`;
+            }
+            display.value = resultString;
+        });
+    };
+    
+ 
+ 
+ 
+ 
+ 
+ function Gugudan() {
+     
+     const dan = document.textForm.dan.value;
+     const display = document.textForm.display;
+     display.value = "";
+     
+     for (let i = 1; i <= 9; i++) {
+         const result = dan * i;
+         display.value += dan + " x " + i + " = " + result + "\n";
+     }
+ }
+
+</script>
+
+
+</head>
+<body>
+<form name="textForm">
+	<input type="text" name="dan" size="3">단
+	<input type="button" value="출력" id="printBtn"><br><br>
+	<textarea rows="15" cols="20" name="display"></textarea>
+</form>
+
+
+
+</body>
+</html>

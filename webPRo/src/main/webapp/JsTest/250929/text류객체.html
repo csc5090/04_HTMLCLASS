@@ -34,8 +34,18 @@ const view = ()=>{
    //console.log("password", document.textForm.pass.value);
    //console.log("textarea"), document.testForm.content.value);
    
-   document.querySelector("txtName").value = "저는 홍길동입니다.";
-   document.textForm.content = "textarea에 출력합니다.";
+   //document.querySelector("txtName").value = "저는 홍길동입니다.";
+   //document.textForm.content = "textarea에 출력합니다.";
+   
+   //text객체나 textarea객체에 출력된 내용 지우기
+   document.testForm.txtName.value = "";
+   document.textForm.content.value = "";
+   
+   document.testForm.txtName.focus();
+   document.testForm.pass.focus();
+   document.testForm.content.focus();
+   
+   
 }
 
 
@@ -49,7 +59,7 @@ const view = ()=>{
    
    암 호 : <input type="password" name="pass"><br><br>
    
-   내 용 : <textarea rows="7" cols="50" name="content"></textarea>
+   내 용 : <textarea rows="7" cols="50" name="content">이 부분이 textarea의 초기값 영역임.</textarea>
    <br><br>
    
    <input type="button" value="확 인" onclick="view()">
