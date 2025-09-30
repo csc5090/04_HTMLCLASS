@@ -14,6 +14,43 @@
    홍길동씨는 남자(여자)이고, 취미는 없으시군요!
 	
  */
+ 
+ document.addEventListener("DOMContentLoaded", ()=> {
+	 document.querySelector("#viewBtn").addEventListener("click", ()=> {
+	 	const f = document.exForm;
+	 	const name = f.irum.value;
+	 	if(name == ""){
+	 		alert("이름을 입력하세요");
+	 		f.irum.focus();
+	 		return;
+	 	}
+	 	
+	 	let gen = "";
+	 	if(f.gender[0].checked){
+	 		gen = f.gender[0].value;
+	 	} else {
+	 		gen = "여자";
+	 	}
+	 	
+	 	const hobbyArr = [];
+	 	for(let i=0; i<f.hobby.length; i++){
+	 		if(f.hobby[i].checked){
+	 			hobbyArr.push(f.hobby[i].value);
+	 		}
+	 	}
+	 	
+	 	f.result.value = name + "씨 당신은 " + gen + "이고\n";
+	 	f.result.value += hobbyArr.length == 0 ? "취미가 없군요" : "취미는" + hobbyArr.join(", ") + "이군요";
+	 	
+	 });
+ });
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
  window.onload = function() {
      const viewBtn = document.getElementById('viewBtn');
