@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>event</title>
+<style>
+ul{ list-style-type: none; padding: 0px; }
+li { padding: 0; display: inline; }
+
+.imgText { padding: 0px 10px }
+</style>
+<script>
+
+//문제 ) 링크 걸린 글자를 클릭하면 해당 이미지가 아래의 <img>태그에 나오도록 한다.
+	//이벤트 위임 방식.
+	
+	document.addEventListener("DOMContentLoaded", () => {
+    const imgView = document.getElementById('imgView');
+    const ulContainer = document.querySelector('ul');
+    
+    if (imgView && ulContainer) {
+        ulContainer.addEventListener('click', (event) => {
+            if (event.target.tagName === 'A') {
+                event.preventDefault();
+                imgView.src = event.target.href;
+            }
+        });
+    }
+});
+
+
+   
+   
+</script>
+</head>
+<body>
+
+<ul>
+	<li><a href="../../images/jQuery.jpg" class="imgText">jQuery</a></li>
+	<li><a href="../../images/JSP2_1.jpg" class="imgText">JSP</a></li>
+	<li><a href="../../images/UML.jpg" class="imgText">UML</a></li>
+</ul>
+
+<hr color="red">
+<img src="../../images/jQuery.jpg " id="imgView">
+
+</body>
+</html>
