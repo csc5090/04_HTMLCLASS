@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원 정보 입력</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <fieldset class="form-fieldset">
+            <legend>회원정보입력</legend>
+            <div class="form-group">
+                <label for="id">아이디(5~10 문자):</label>
+                <input type="text" id="id" name="id">
+            </div>
+            <div class="form-group">
+                <label for="password">비밀번호:</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <div class="form-group">
+                <label for="name">이름:</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="birthdate">생년월일:</label>
+                <input type="text" id="birthdate" name="birthdate" placeholder="연도 - 월 - 일">
+            </div>
+            <div class="form-group">
+                <label for="phone">휴대폰:</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+                <label for="email">이메일:</label>
+                <input type="email" id="email" name="email">
+            </div>
+        </fieldset>
+        <div class="button-group">
+            <button type="submit" class="submit-btn">전송</button>
+            <button type="button" class="cancel-btn">취소</button>
+        </div>
+    </div>
+</body>
+</html>

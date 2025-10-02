@@ -1,0 +1,78 @@
+body {
+    background-color: #f0f0f0;
+    font-family: 'Malgun Gothic', '맑은 고딕', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.form-container {
+    padding: 20px;
+    background-color: #e6e6e6;
+    border: 1px solid #c0c0c0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-fieldset {
+    border: 1px solid #c0c0c0;
+    padding: 10px 20px 20px 20px;
+}
+
+.form-fieldset legend {
+    font-weight: bold;
+    color: #333;
+    padding: 0 5px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.form-group:last-of-type {
+    margin-bottom: 0;
+}
+
+.form-group label {
+    width: 120px;
+    text-align: right;
+    padding-right: 10px;
+    white-space: nowrap;
+}
+
+.form-group input {
+    flex-grow: 1;
+    border: 1px solid #a0a0a0;
+    padding: 2px;
+    height: 20px;
+    box-sizing: border-box;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.submit-btn, .cancel-btn {
+    padding: 8px 25px;
+    border: 1px solid #888;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    height: 35px;
+}
+
+.submit-btn {
+    background-color: #3b5998;
+}
+
+.cancel-btn {
+    background-color: #aaaaaa;
+}
