@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체구조분해할당</title>
+
+<script>
+/* 객체 구조 분해 할당
+ 	형식1) const 또는 let {변수명1, 변수명2, ~~~} = 객체;
+ 		==> '변수명'들은 '객체'의 key값과 같아야 함.(순서는 관계 없음)
+ 		
+ 	형식2) const 또는 let {변수명1, 변수명2:새로운변수명, ~~~} = 객체;
+ 		==> '변수명'대신 '새로운변수명'으로 사용할 때.
+ 		
+ 	형식3) const 또는 let {변수명1, 변수명2=기본값, ~~~} = 객체;
+ 		==> '변수명'이 존재하지 않으면 '기본값'으로 할당한다.
+ 	형식4) const 또는 let {변수명1, 변수명2, ...객체변수명} = 객체;
+ 		==> 변수에 할당하고 남은 데이터들을 '객체변수명'에 모두 설정한다. (스프레드 연산자)
+
+
+ const subjects = {
+ 				kor : "국어",
+ 				eng : "영어",
+ 				mat : "수학"
+ 		};
+ //기존의 방식		
+ const kor1 = subjects.kor;
+ const eng1 = subjects.eng;
+ const mat1 = subjects.mat;
+ 
+ console.log("kor1", kor1);
+ console.log("eng1", eng1);
+ console.log("mat1", mat1);
+ console.log("------------------");
+ 
+ //구조 분해 할당
+ const {eng, kor, mat} = subjects;
+ console.log("kor", kor);
+ console.log("eng", eng);
+ console.log("mat", mat);
+ console.log("------------------");
+ 
+ 
+ const {kor, mat} = subjects;
+ console.log("kor", kor);
+ console.log("mat", mat);
+ 
+ 
+ let mat = "산수";
+ 
+ const {kor, eng, mat:math} = subjects;
+ console.log("kor", kor);
+ console.log("eng", eng);
+ console.log("mat", mat);
+ console.log("math", math);
+ console.log("---------------");
+ 
+ const {eng, kor, mat, science} = subjects; // 없는 변수를 사용하면 undefined 가 됨.
+ 
+ const {eng, kor, mat, science="과학"} = subjects; //기본값설정
+ console.log("kor", kor);
+ console.log("eng", eng);
+ console.log("mat", mat);
+ console.log("science", science);
+ console.log("-----------------");
+ 
+ console.log("subjects", subjects);
+ 
+ 변수에 할당하고 남은 속성들로 구성된 객체가 생성되어(예제의 'rest'변수) 나머지 데이터가 저장된다.
+ 
+ cosnt {kor, ...rest} = subjects;
+ console.log("kor", kor);
+ console.log("rest", rest);
+ 
+ //활용하기
+ const users = [
+	{name : "홍길동", age : 25},
+	{name : "일지매", age : 30}
+ ];
+ 
+ //배열에 저장된 데이터 출력하기
+ for( const user of userArr) {
+	 console.log("이름 : ", user.name);
+	 console.log("나이 : ", user.age);
+	 console.log("---------------");
+ }
+ 
+ //구조분해 할당 이용
+ 
+ for(const {name, age} of userArr){
+	 console.log("이름_: ", name);
+	 console.log("나이_: ", age);
+	 console.log("--------------");
+ }
+ 
+ const user = {name : "이순신", age : 33};
+ 
+ //함수의 매개변수를 구조분해할당으로 처리하기
+ 
+ function printUser(us){
+	 const name = us.name;
+	 const age = us.age;
+	 console.log(name, age);
+ }
+ 
+ function printUser2({name, age}){
+	 console.log("구조분해", name, age);
+ }
+ 
+ 
+ 
+ */
+ 
+ 
+
+ 
+ 
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

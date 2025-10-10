@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>스프레드연산자연습</title>
+
+<script>
+
+/*
+const user1 = {name : "홍길동", age : 25};
+const user2 = {name : "일지매", age : 30};
+
+const userArr = [user1, user2];
+
+//배열 복사하기
+//const userArr2 = [];
+//userArr2.push(userArr1[0]);
+//userArr2.push(userArr1[1]);
+
+//console.log("userArr1", userArr1);
+//console.log("userArr2", userArr2);
+
+const userArr2 = [...userArr1];  //userArr1에 있는 요소들을 낱개로 분해해서 가져온다. 이 때 복사된 객체는 참조값만 복사된 상태.
+
+console.log("userArr1_", userArr1);
+console.log("userArr2_", userArr2);
+
+userArr1[0].name = "변학도";
+
+console.log("userArr1_", userArr1);
+console.log("userArr2_", userArr2);
+console.log("--------------------");
+
+const userArr3 = [...userArr1, {name: "이순신", age: 35}];
+console.log("userArr3", userArr3);
+console.log("----------------------------");
+
+*/
+
+//객체 복사
+const user3 = {...user1};
+console.log("user1", user1);
+console.log("user2", user2);
+console.log("----------------------------");
+
+//배열 합치기
+const arr1 = ["사과", "복숭아"];
+const arr2 = ["복숭아", "포도", "배"];
+
+const arr3 = [...arr1, ...arr2];
+
+console.log("arr1", arr1);
+console.log("arr2", arr2);
+console.log("arr3", arr3);
+console.log("----------------------------");
+
+//객체 병합
+const obj1 = {name : "강감찬"};
+const obj2 = {age: 44, name:"홍길동"};
+const obj3 = {...obj1, ...obj2};
+
+console.log("obj1", obj1);
+console.log("obj2", obj2);
+console.log("obj3", obj3);
+
+
+
+</script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+/* 
+ 	- File 객체를 사용하면 File의 name이나 size등과 같은 기본적인 정보에 접근할 수 있다.
+ 	
+ 	- FileReader 객체는 File의 내용을 읽을 수 있는 기능을 제공한다.
+ 	
+ 	1. File 객체가 가지고 있는 속성 및 메서드
+ 		- name ==> 파일 이름을 나타낸다.
+ 		- type ==> 파일의 MIME Type을 나타낸다. (알 수 없을 경우에는 null)
+ 		- size ==> 파일의 크기
+ 		- lastModified ==> 파일의 최종 수정 날짜(TimeStamp값)
+ 		- lastModifiedData ==> 파일의 최종 수정 날자(Date객체)
+ 		- slice(start, end) ==> 시작 위치부터 끝 위치를 지정하여 파일의 내용을 잘라내 새로운 Blob 객체를 반환하는 메서드
+ 		
+ 	2. FileReader객체가 가지고 있는 속성 및 메서드
+ 		- readAsBinaryString(File객체) ==> 파일의 내용을 읽어 Binary 문자열로 저장.
+ */
+
+</script>
+
+
+</head>
+<body>
+<h2>File API 연습</h2>
+<input type="file" id="file">
+
+<input type="button" value="열기" onclick="readFile()">
+
+<hr color="red">
+
+
+
+</body>
+</html>
