@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#fileDisplayArea{
+width:100%; margin-top:2em; overflow-x: auto;}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", ()=>{
+	const fileInput = document.querySelector("#fileInput");
+	const fileDisplayArea = document.querySelector("#fileDisplayArea");
+	
+	fileInput.addEventListener("change", (e)=>{
+		//const fileArr = fileInput.files;
+		constfileArr = e.target.files;
+		const imageType = /image.*/; //이미지 검사용 정규식
+		fileDisplayArea.innerHTML = "";
+		
+		for(let i=0; i<fileArr.length; i++){
+			const file = fileArr[i];
+
+		//선택한 파일이 이미지 파일인지 검사
+		if(file.type.match(imageType)){
+			const reader = new FileReader();
+			
+			reader.readAsDataURL(file);
+			
+			reader.onload = ()=>{
+				fileDisplayArea.innerHTML = "";
+				
+				//읽어들인 파일 내용을 출력할 Image객체 생성
+				const img = new Image();
+				img.src = reader.result;
+				
+				fileDisplayArea.appendChild(img);
+			}
+		}else{
+			fileDisplayArea.innerHTML = "<h3>이미지 파일이 아닙니다.</h3>";
+		}
+			
+		}//if, else
+	});//change Listener
+	
+});
+</script>
+</head>
+<body>
+<div>
+	<h2>이미지 파일 읽기</h2>
+	<div>이미지 파일 선택 : <input type="file" id="fileInput"></div>
+	<hr color="red">
+	<div id="fileDisplayArea"></div>
+	
+</div>
+
+</body>
+</html>

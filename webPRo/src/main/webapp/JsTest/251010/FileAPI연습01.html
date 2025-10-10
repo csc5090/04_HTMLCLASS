@@ -19,7 +19,52 @@
  		
  	2. FileReader객체가 가지고 있는 속성 및 메서드
  		- readAsBinaryString(File객체) ==> 파일의 내용을 읽어 Binary 문자열로 저장.
+ 		- readAsText(File객체, encoding문자열) ==> 파일 내용을 읽어 Text로 저장함. 기본 인코딩 값은 UTF-8
+ 		- readAsDataURL(File 객체) ==> 파일 내용을 읽어 dataURL 형식의 문자열로 저장한다.
+ 		- result ==> 읽어들인 File 내용이 저장되는 속성
+ 		- error ==> 에러 발생시 오류 정보가 저장됨
+ 		- onload ==> 읽어 들이기에 성공했을 때 호출되는 이벤트핸들러
+ 		- onprogress ==> 읽어 들이기의 진행 사항을 얻을 수 있는 이벤트핸들러
+ 		- onerror ==> 읽어 들이기 중 error 발생 시 호출되는 이벤트핸들러
+ 		
+ 		- FileReader가 동작하는 중에 발생하는 Error에 대한 상수값들.
+ 			1) NOT_FOUND_ERR (1) : 읽을 파일을 찾을 수 없음.
+ 			2) SECURITY_ERR (2) : 안전하지 못 하거나, 파일이 변경되었을 때.
+ 			3) ABORT_ERR (3) : 읽기가 강제로 중지되었을 때.
+ 			4) NOT_READABLE_ERR (4) : 접근 권한 문제로 파일을 읽지 못 하였을 때.
+ 			5) ENCODING_ERR (5) : URL길이 제한에 걸렸을 때.
+ 			
  */
+ 
+ function readFile() {
+ 	// 선택한 파일들은 입력 요소의 파일객체(type속성이 'file'인 입력요소)의 files라는 배열에 저장됨.
+ 	//const file = document.getElementById("file").files[0];
+ 	const file = document.querySelector("#file").files[0];
+ 	
+ 	const display = document.getElementById("content");
+ 	
+ 	for(const x in file){
+ 		display.value += x + " : " + file[x] + "\n";
+ 	}
+ 	display.value += "------------------\n\n";
+ 	
+ 	document.querySelector("#fileName").textContent = file.name;
+ 	document.querySelector("#fileSize").textContent = file.size + "byte(s)";
+ 	
+ 	const reader = new FileReader();
+
+ 	reader.readAsText(file); // 파일 내용 읽기
+
+ 	//읽기 작업이 완료되었을 때의 이벤트 처리
+ 	reader.onload = ()=>{
+ 		display.value += reader.result;
+ 	}
+ 	
+ 	
+ 	
+}
+ 
+
 
 </script>
 
@@ -32,6 +77,13 @@
 <input type="button" value="열기" onclick="readFile()">
 
 <hr color="red">
+
+<div>
+	File Name : <span id="fileName"></span>
+	File Size : <span id="fileSize"></span>
+</div>
+
+<textarea id="content" readonly style="width: 600px; height: 400px;"></textarea>
 
 
 
