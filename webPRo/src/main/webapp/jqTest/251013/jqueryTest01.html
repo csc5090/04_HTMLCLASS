@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- jQuery 라이브러리 등록하기 -->
+<script src="../../js/jquery-3.7.1.js"></script>
+
+<script>
+/*
+document.addEventListener("DOMContentLoaded", ()=>{
+   let h3TagArr = document.getElementsByTagName("h3"); 
+   //console.log(h3TagArr);//6개의 h3 태그
+   alert(h3TagArr[0].innerHTML);
+   
+});
+*/
+
+//jQuery(document).ready(function(){   // 'jQuery' 대신 '$'를 사용할 수 있다.
+//$(document).ready(function(){
+$(function(){
+   let h3TagArr = document.getElementsByTagName("h3");
+   
+//   alert(h3TagArr[0].innerHTML);
+//   alert(h3TagArr[0].innerText);
+//   alert(h3TagArr[0].textContent);
+
+//    alert( jQuery("h3").get(0).textContent );
+//   alert( $("h3").get(0).innerHTML ); 
+
+//   alert( $("h3").first().html() );   // == innerHTML
+//   alert( $("h3").first().text() );   // == textContent
+   
+//   for(let i=0; i<h3TagArr.length; i++){
+//      h3TagArr[i].style.backgroundColor = "yellow";
+//      h3TagArr[i].style["background-color"]= "blue";
+//      h3TagArr[i].style.color = "red";
+//   }
+
+//   $("h3").css("backgroundColor", "pink");
+//   $("h3").css("background-color", "yellow");
+//   $("h3").css("color", "blue");
+
+   // 메서드 체이닝 방식
+//   $("h3").css("background-color", "yellow").css("color", "red");
+   
+   // jQuery의 selector 자리에 엘리먼트 객체를 넣을 수 있다.
+//   $(h3TagArr).css("background-color", "blue").css("color", "pink");
+   
+//   $("#test2 h3").css("background-color", "blue").css("color", "pink");
+   
+//   $("h3, #test2").css("background-color", "blue").css("color", "pink");
+   
+   // $(selector, context) ==> 'context'범위 안에서 'selector'를 찾는다.
+//   $("h3", "#test2").css("background-color", "blue").css("color", "pink");
+   
+//   $("h3").get();   // ==> doucment.getElementsByTagName("h3")와 같다.
+//   $("h3").get(index);   // ==> 'index'번째의 엘리먼트 객체 1개를 반환한다.
+                  // ==> $("h3")[index]와 같이 사용할 수 있다.
+
+//    let h3Arr = $("h3").get();
+//    for(let i=0; i<h3TagArr.length; i++){
+//       h3Arr[i].style.backgroundColor = "yellow";
+//      h3Arr[i].style["background-color"]= "blue";
+//       h3Arr[i].style.color = "red";
+//    }
+
+   $("h3").get(1).style.backgroundColor = "green";
+   $("h3")[1].style.color = "red";
+});
+
+
+// <p id="p1">Hello jQuery!!!</p> 와 같은 내용을 문서 끝에 추가하기
+ function test(){
+//    let ele = $("<p id='p1'>Hello jQuery!!!</p>");
+//    ele.appendTo("body");
+
+//   $("<p/>", {
+//      "id" : "p1", 
+//      "text" : "Hello jQuery2!!!",
+//      "click" : function(){
+//         $(this).css("color", "red")
+//                .css("font-size", "+=5px");
+//      }
+//   }).appendTo("body");
+   
+//   alert($("h3").length); //length속성 ==> selector에 의해 선택되어 jQuery객체에 저장된 엘리먼트 객체의 개수를 나타낸다.
+   
+   //$("h3").each(function(i,v){
+	   //변수 i에는 index값이, 변수v에는 i번째 엘리먼트 객체가 저장됨.
+	   //if(i%2==0){
+	//	 $(v).css("color", "red");
+	//   }
+	//   });
+  // }
+
+
+}
+
+
+
+
+
+
+</script>
+
+
+</head>
+<body>
+<div id="test1">
+   <h3>안녕하세요 jquery1<br>시작입니다...</h3>
+   <h3>안녕하세요 jquery2<br>시작입니다...</h3>
+   <h3>안녕하세요 jquery3<br>시작입니다...</h3>
+</div>
+
+<div id="test2">
+   <h3>안녕하세요 test1<br>입니다...</h3>
+   <h3>안녕하세요 test2<br>입니다...</h3>
+   <h3>안녕하세요 test3<br>입니다...</h3>
+</div>
+
+<hr color="red">
+
+<input type="button" value="새로 만들기" onclick="test()">
+
+
+
+</body>
+</html>
