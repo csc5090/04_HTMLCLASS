@@ -3,8 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="../../js/jquery-3.7.1.js"></script>
+<script>
+$(function(){
+	$("input:button").click(function(){
+		let hobbyArr = [];
+		
+		// checkbox에서 check된 엘리먼트들을 찾아 찾아진 개수만큼 반복처리.
+		$("checkbox:checked").each(function(i,v){
+			
+			//check된 엘리먼트의 value값을 배열에 추가한다.
+			hobbyArr.push( $(v).val() );
+			
+		});
+		let str = "취미는 ";
+		str += hobbyArr.length==0 ? "없다" : hobbyAr.join(",") + " 이군요";
+	});
+	
+});
+</script>
+
+
 </head>
 <body>
+
+<form>
+	취미 :
+		<input type="checkbox" name="hobby" value="여행" checked>여행
+		<input type="checkbox" name="hobby" value="여행" >여행
+		<input type="checkbox" name="hobby" value="여행" >여행
+		<input type="checkbox" name="hobby" value="여행" >여행
+		<input type="checkbox" name="hobby" value="여행" >여행
+		<input type="checkbox" name="hobby" value="여행" >여행
+		<input type="checkbox" name="hobby" value="여행" >여행
+		
+</form>
 
 </body>
 </html>
