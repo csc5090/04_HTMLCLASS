@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../js/jquery-3.7.1.js">
+</script>
+<script>
+$(function(){
+	//$("li:first").css("background-color", "yellow");
+	$("li").first().css("background-color", "yellow");
+	$("li").last().css("background-color", "red");
+	$("li").eq(5).css("background-color", "red");
+	
+	//slice(시작위치, 종료위치) ==> 시작위치부터 종료위치 이전까지의 요소를 선택
+	// ==> 종료위치가 생략되면 시작위치부터 끝까지의 요소를 선택
+	
+	
+})
+
+</script>
+
+
+</head>
+<body>
+<ul>
+<li>one</li>
+<li>two</li>
+<li>three</li>
+<li>four</li>
+<li>five</li>
+<li>six</li>
+<li>seven</li>
+<li>eight</li>
+<li>nine</li>
+<li>ten</li>
+</ul>
+
+</body>
+</html>
